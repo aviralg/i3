@@ -237,32 +237,32 @@ bar {
 ### OMNIPRESENT PROCESSES
 ################################################################################
 for_window [title="omni-.*"] floating enable
-for_window [title="omni-.*"] resize set 1400 800
+for_window [title="omni-.*"] resize set 1600 800
 for_window [title="omni-.*"] move scratchpad
 for_window [title="omni-.*"] border pixel 6
 
 ################################################################################
 #### OMNIPRESENT EDITOR
 ################################################################################
-exec --no-startup-id emacs --title "omni-editor" ~/projects/notes
+exec --no-startup-id sleep 1 && emacs --title "omni-editor" ~/projects/notes
 bindsym $mod+n [title="omni-editor"] scratchpad show; [title="omni-editor"] move position center
 
 ################################################################################
 #### OMNIPRESENT TERMINAL
 ################################################################################
-exec --no-startup-id emacs --title "omni-terminal" --eval="(multi-term)"
+exec --no-startup-id sleep 4 && emacs --title "omni-terminal" --eval="(multi-term)"
 bindsym $mod+comma [title="omni-terminal"] scratchpad show; [title="omni-terminal"] move position center
 
 ################################################################################
 #### OMNIPRESENT R
 ################################################################################
-exec --no-startup-id emacs --title "omni-r" --eval="(let ((ess-ask-for-ess-directory nil)) (ess-r-mode) (R-patched-dyntrace))"
+exec --no-startup-id sleep 8 && emacs --title "omni-r" --eval="(progn (ess-r-mode) (R-patched-dyntrace))"
 bindsym $mod+period [title="omni-r"] scratchpad show; [title="omni-r"] move position center
 
 ################################################################################
 #### OMNIPRESENT FILE MANAGER
 ################################################################################
-exec --no-startup-id emacs --title "omni-file-manager" --eval="(ranger)"
+exec --no-startup-id sleep 12 && emacs --title "omni-file-manager" --eval="(ranger)"
 bindsym $mod+slash [title="omni-file-manager"] scratchpad show; [title="omni-file-manager"] move position center
 
 ################################################################################
