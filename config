@@ -298,3 +298,12 @@ bindsym XF86MonBrightnessDown exec xbacklight -dec 5 #decrease screen brightness
 # Screenshot Controls
 bindsym --release Print exec flameshot full --path ~/pictures/screenshots
 bindsym --release Shift+Print exec flameshot gui --path ~/pictures/screenshots
+
+# Network Manager
+exec --no-startup-id nm-applet
+
+# Bluetooth Manager
+exec --no-startup-id blueman-applet
+
+# Volume Manager
+exec --no-startup-id pasystray
